@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import bcrypt from "bcryptjs";
 import {
   Entity,
   Column,
@@ -6,6 +7,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   BaseEntity,
+  BeforeInsert,
 } from "typeorm";
 
 // const enum ROLES {
@@ -32,6 +34,12 @@ export class User extends BaseEntity {
 
   @Column()
   password: string;
+
+  @BeforeInsert()
+  concatFullName() {
+    const salt = bcrypt.genSaltSync(10);
+    this.password = bcrypt.hashSync(this.password, salt);
+  }
 
   @Column({
     type: "enum",

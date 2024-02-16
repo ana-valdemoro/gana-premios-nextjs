@@ -27,7 +27,6 @@ export async function POST(request: Request) {
     user.fullname = fullname;
     user.email = email;
     user.password = password;
-    throw new Error("x");
     await user.save();
 
     return NextResponse.json(user);
