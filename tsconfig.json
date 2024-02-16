@@ -12,6 +12,7 @@
     "isolatedModules": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noImplicitAny": true,
     "strictPropertyInitialization": false, // disable because we are using typeOrm
     "jsx": "preserve",
     "incremental": true,
