@@ -1,6 +1,8 @@
+import { UserObject } from '@/Schemas/UserSchema';
 import { connectDB } from '@/libs/db';
 import { User } from '@/models/User';
 import { NextResponse } from 'next/server';
+import { ValidationError } from 'yup';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type bodyUser = {
@@ -9,36 +11,23 @@ type bodyUser = {
   password: string;
 };
 
-const validateUser = (
-  user: bodyUser
-): { isValid: boolean; message?: string; status?: number } => {
-  const { fullname, email, password }: bodyUser = user;
-
-  if (fullname === '' || email === '' || password === '') {
-    return {
-      isValid: false,
-      message: 'Fullname, email, and password are required fields',
-      status: 400,
-    };
-  }
-
-  if (password.length < 8) {
-    return {
-      isValid: false,
-      message: 'Password must be at leat 8 characters',
-      status: 400,
-    };
-  }
-  return { isValid: true };
-};
-
 export async function POST(request: Request): Promise<Response> {
   const bodyUser: bodyUser = await request.json();
 
-  const { isValid, message, status } = validateUser(bodyUser);
-
-  if (!isValid) {
-    return NextResponse.json({ message }, { status });
+  try {
+    await UserObject.validate(bodyUser);
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      const { errors, path } = error;
+      return NextResponse.json(
+        {
+          field: path,
+          errors,
+        },
+        { status: 409 }
+      );
+    }
+    return NextResponse.error();
   }
 
   try {
