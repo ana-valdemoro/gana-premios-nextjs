@@ -32,7 +32,7 @@ export class User extends BaseEntity {
   @Column()
   email: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
 
   @BeforeInsert()
@@ -56,4 +56,10 @@ export class User extends BaseEntity {
 
   @Column({ type: 'bytea', nullable: true })
   gdprSignedFile: Buffer | null;
+
+  @Column({ nullable: true })
+  token: string | null;
+
+  @Column({ default: false })
+  active: boolean;
 }
