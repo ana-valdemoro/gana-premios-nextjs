@@ -1,5 +1,5 @@
-import "reflect-metadata";
-import bcrypt from "bcryptjs";
+import 'reflect-metadata';
+import bcrypt from 'bcryptjs';
 import {
   Entity,
   Column,
@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
   BaseEntity,
   BeforeInsert,
-} from "typeorm";
+} from 'typeorm';
 
 // const enum ROLES {
 //   ADMIN = "ADMIN",
@@ -16,9 +16,9 @@ import {
 //   PARTICIPANT = "PARTICIPANT",
 // }
 const ROLES = {
-  ADMIN: "ADMIN",
-  MANAGER: "MANAGER",
-  PARTICIPANT: "PARTICIPANT",
+  ADMIN: 'ADMIN',
+  MANAGER: 'MANAGER',
+  PARTICIPANT: 'PARTICIPANT',
 } as const;
 
 @Entity()
@@ -36,13 +36,13 @@ export class User extends BaseEntity {
   password: string;
 
   @BeforeInsert()
-  concatFullName() {
+  encryptPassword(): void {
     const salt = bcrypt.genSaltSync(10);
     this.password = bcrypt.hashSync(this.password, salt);
   }
 
   @Column({
-    type: "enum",
+    type: 'enum',
     enum: Object.values(ROLES),
     default: ROLES.PARTICIPANT,
   })
@@ -54,6 +54,6 @@ export class User extends BaseEntity {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @Column({ type: "bytea", nullable: true })
+  @Column({ type: 'bytea', nullable: true })
   gdprSignedFile: Buffer | null;
 }
