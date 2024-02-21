@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "handlebars": "^4.7.8",
+    "jsonwebtoken": "^9.0.2",
     "next": "14.1.0",
     "next-auth": "^4.24.6",
+    "nodemailer": "^6.9.9",
     "pg": "^8.11.3",
     "react": "^18",
     "react-dom": "^18",
@@ -22,6 +25,7 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
