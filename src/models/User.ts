@@ -57,7 +57,7 @@ export class User extends BaseEntity {
   @Column({ type: 'bytea', nullable: true })
   gdprSignedFile: Buffer | null;
 
-  @Column({ nullable: true })
+  @Column({ type: 'text', nullable: true })
   token: string | null;
 
   @Column({ default: false })
