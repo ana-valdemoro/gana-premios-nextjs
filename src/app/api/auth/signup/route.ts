@@ -1,5 +1,6 @@
 import { UserObject } from '@/Schemas/UserSchema';
 import { connectDB } from '@/libs/db';
+import { sendAccountActivationEmail } from '@/libs/email';
 import { User } from '@/models/User';
 import { NextResponse } from 'next/server';
 import { ValidationError } from 'yup';
@@ -48,7 +49,14 @@ export async function POST(request: Request): Promise<Response> {
     user.fullname = fullname;
     user.email = email;
     user.password = password;
+
     await user.save();
+
+    try {
+      await sendAccountActivationEmail(email, 'mY-TOKEN-MOCKERD');
+    } catch (error) {
+      console.error('We cannot send the activation email');
+    }
 
     return NextResponse.json(user);
   } catch (error) {
