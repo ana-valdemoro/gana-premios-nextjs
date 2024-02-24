@@ -45,6 +45,7 @@ export const sendAccountActivationEmail = async (
   const buttonText = 'Activate your account';
 
   const htmlToSend = template({
+    // TODO: pending to define FRONT_BASE_URL
     url: `${process.env.FRONT_BASE_URL}/activate-account/${token}`,
     title,
     message,

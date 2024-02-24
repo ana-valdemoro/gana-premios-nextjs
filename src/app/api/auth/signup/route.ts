@@ -1,6 +1,8 @@
 import { UserObject } from '@/Schemas/UserSchema';
+import { JWT_ACSESS_TOKEN } from '@/constants/accessToken';
 import { connectDB } from '@/libs/db';
 import { sendAccountActivationEmail } from '@/libs/email';
+import { generateJWT } from '@/libs/jwt';
 import { User } from '@/models/User';
 import { NextResponse } from 'next/server';
 import { ValidationError } from 'yup';
@@ -49,11 +51,18 @@ export async function POST(request: Request): Promise<Response> {
     user.fullname = fullname;
     user.email = email;
     user.password = password;
+    user.token = generateJWT(
+      { type: 'user', id: '' },
+      {
+        expiresIn: JWT_ACSESS_TOKEN.USER_CONFIRMATION.expiration,
+        audience: JWT_ACSESS_TOKEN.USER_CONFIRMATION.scope,
+      }
+    );
 
     await user.save();
 
     try {
-      await sendAccountActivationEmail(email, 'mY-TOKEN-MOCKERD');
+      await sendAccountActivationEmail(email, user.token);
     } catch (error) {
       console.error('We cannot send the activation email');
     }
