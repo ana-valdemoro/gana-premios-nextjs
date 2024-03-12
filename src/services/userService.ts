@@ -4,13 +4,25 @@ import { connectDB } from '@/libs/db';
 async function getUserByEmail(email: string): Promise<User | null> {
   await connectDB();
 
-  return await User.findOneBy({ email });
+  // eslint-disable-next-line @typescript-eslint/return-await
+  return User.findOneBy({ email });
 }
 
 async function getAllUsers(): Promise<User[] | null> {
   await connectDB();
 
-  return await User.find();
+  // eslint-disable-next-line @typescript-eslint/return-await
+  return User.find({
+    select: [
+      'id',
+      'email',
+      'fullname',
+      'role',
+      'createAt',
+      'updatedAt',
+      'active',
+    ],
+  });
 }
 
 export const userService = {
