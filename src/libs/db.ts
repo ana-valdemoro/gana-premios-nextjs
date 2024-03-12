@@ -21,7 +21,7 @@ export const connectDB = async (): Promise<boolean> => {
     await AppDatSource.initialize();
     return true;
   } catch (error) {
-    console.error(error);
+    console.error('Database error', error);
     return false;
   }
 };
