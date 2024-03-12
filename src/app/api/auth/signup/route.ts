@@ -67,7 +67,17 @@ export async function POST(request: Request): Promise<Response> {
       console.error('We cannot send the activation email');
     }
 
-    return NextResponse.json(user);
+    const userData: Partial<User> = {
+      id: user.id,
+      email: user.email,
+      fullname: user.fullname,
+      role: user.role,
+      createAt: user.createAt,
+      updatedAt: user.updatedAt,
+      active: user.active,
+    };
+
+    return NextResponse.json(userData);
   } catch (error) {
     console.error('error in /signup', error);
 
