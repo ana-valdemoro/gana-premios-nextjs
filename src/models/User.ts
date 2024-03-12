@@ -41,6 +41,10 @@ export class User extends BaseEntity {
     this.password = bcrypt.hashSync(this.password, salt);
   }
 
+  validatePassword(plainPassword: string): boolean {
+    return bcrypt.compareSync(plainPassword, this.password);
+  }
+
   @Column({
     type: 'enum',
     enum: Object.values(ROLES),
