@@ -5,7 +5,7 @@ import { User } from '../models/User';
 // define database connection
 export const AppDatSource = new DataSource({
   type: 'postgres',
-  host: 'localhost',
+  host: 'postgres',
   port:
     process.env.DB_PORT !== undefined ? parseInt(process.env.DB_PORT) : 5432,
   username: process.env.DB_USERNAME,
