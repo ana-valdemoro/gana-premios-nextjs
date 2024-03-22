@@ -5,6 +5,7 @@ const nextConfig = {
         const warning = [
             ...(config.ignoreWarnings || []),
             { module: /typeorm/ },
+            { module: /handlebars/ },
             { module: /app-root-path/, message: /the request of a dependency is an expression/ },
         ];
         config.ignoreWarnings = warning;
