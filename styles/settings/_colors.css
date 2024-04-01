@@ -1,0 +1,114 @@
+:root {
+  --ghostWhite: #f8fafc;
+  --lotion: #fafafa;
+
+  /*----- COLOUR PALETTE ----*/
+
+  /* GRAY */
+  --gray900: #323338;
+  --gray800: #4b4b4e;
+  --gray700: #777777;
+  --gray600: #999898;
+  --gray500: #b6b6b6;
+  --gray400: #c0c0c0;
+  --gray300: #c8c8c8;
+  --gray200: #dadada;
+  --gray100: #ededed;
+  --gray50: #f7f7f7;
+
+  /* DARK NEUTRAL */
+  --darkNeutral900: #051c57;
+  --darkNeutral800: #142d6e;
+  --darkNeutral700: #243f85;
+  --darkNeutral600: #375399;
+  --darkNeutral500: #4c68ad;
+  --darkNeutral400: #657fc2;
+  --darkNeutral300: #839ad6;
+  --darkNeutral200: #a5b8e8;
+  --darkNeutral100: #c8d6f7;
+  --darkNeutral50: #e8efff;
+
+  /* ERROR */
+  --error900: #5c000c;
+  --error800: #7e0919;
+  --error700: #9f1729;
+  --error600: #c12a3c;
+  --error500: #e44258;
+  --error400: #e65c6e;
+  --error300: #ed6476;
+  --error200: #f18392;
+  --error100: #fcb1bc;
+  --error50: #ffccd3;
+
+  /* WARNING */
+  --warning900: #5c4800;
+  --warning800: #816606;
+  --warning700: #a6850f;
+  --warning600: #cba51b;
+  --warning500: #efc42a;
+  --warning400: #fad75b;
+  --warning300: #f5d460;
+  --warning200: #f7dc7c;
+  --warning100: #fdecad;
+  --warning50: #fef4d2;
+
+  /* SUCCESS */
+  --success900: #0e5c00;
+  --success800: #1e750e;
+  --success700: #338f22;
+  --success600: #4da83d;
+  --success500: #6dc25e;
+  --success400: #76ce66;
+  --success300: #86d578;
+  --success200: #9ce090;
+  --success100: #b7f0ad;
+  --success50: #c9f0c2;
+
+  /* BLUE */
+  --primary900: #003d5c;
+  --primary800: #08577f;
+  --primary700: #1573a2;
+  --primary600: #2690c5;
+  --primary500: #3bade7;
+  --primary400: #4db5eb;
+  --primary300: #5ebeee;
+  --primary200: #81cdf4;
+  --primary100: #a6ddf9;
+  --primary50: #cceeff;
+
+  /* PINK */
+  --pink900: #5c003a;
+  --pink800: #811359;
+  --pink700: #a7307c;
+  --pink600: #cd59a2;
+  --pink500: #f38ece;
+  --pink400: #f491d0;
+  --pink300: #f4b1dc;
+  --pink200: #f9b7e0;
+  --pink100: #fdcaea;
+  --pink50: #ffe3f4;
+
+  /* LILAC */
+  --lilac900: #0f005c;
+  --lilac800: #231085;
+  --lilac700: #402aad;
+  --lilac600: #644dd6;
+  --lilac500: #917bff;
+  --lilac400: #9e8aff;
+  --lilac300: #b6a7fe;
+  --lilac200: #c5b9ff;
+  --lilac100: #d7ceff;
+  --lilac50: #eae6ff;
+
+  /* ORANGE */
+  --orange900: #5c3d00;
+  --orange800: #825906;
+  --orange700: #a87610;
+  --orange600: #cf941d;
+  --orange500: #f5b22e;
+  --orange400: #f6bb45;
+  --orange300: #f9c865;
+  --orange200: #ffd788;
+  --orange100: #ffe7b5;
+  --orange50: #fef3dc;
+}

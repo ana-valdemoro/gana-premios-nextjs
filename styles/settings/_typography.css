@@ -1,0 +1,29 @@
+:root {
+  --font-family: 'Roboto,sans-serif';
+  --base: 16px;
+
+  /* 0.7rem */
+  --fs-11_2: calc(11.2 / var(--base)) rem;
+  /* 0.75rem */
+  --fs-12: calc(12 / var(--base)) rem;
+  /* 0.875rem */
+  --fs-14: calc(14 / var(--base)) rem;
+  /* 1rem */
+  --fs-16: calc(16 / var(--base)) rem;
+  /* 1.25rem */
+  --fs-20: calc(20 / var(--base)) rem;
+  /* 1.4rem */
+  --fs-22_4: calc(22.4 / var(--base)) rem;
+  /* 2rem */
+  --fs-32: calc(32 / var(--base)) rem;
+
+  /* --------------------- */
+
+  --fs-moduleTitle: var(--fs-11_2);
+  --fs-secondaryMessage: var(--fs-12);
+  --fs-description: var(--fs-14);
+  --fs-body: var(--fs-16);
+  --fs-confirmMessage: var(--fs-20);
+  --fs-selection: var(--fs-22_4);
+  --fs-actionMessage: var(--fs-32);
+}
