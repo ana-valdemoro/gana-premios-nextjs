@@ -1,5 +1,5 @@
-import { userService } from '@/services/userService';
 import NextAuth from 'next-auth';
+import { userService } from '@/services/userService';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 const handler = NextAuth({
@@ -14,6 +14,7 @@ const handler = NextAuth({
           placeholder: 'Add password',
         },
       },
+
       async authorize(credentials) {
         const { email, password } = credentials as {
           email: string;
@@ -21,15 +22,12 @@ const handler = NextAuth({
         };
 
         const user = await userService.getUserByEmail(email);
-
-        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-        if (!user) return null;
+        if (user === null) return null;
 
         const hasValidPassword = user.validatePassword(password);
 
-        if (!hasValidPassword) return null;
+        if (!hasValidPassword || !user.active) return null;
 
-        console.log('aqui');
         return user;
       },
     }),
