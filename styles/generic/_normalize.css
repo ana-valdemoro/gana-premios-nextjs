@@ -36,7 +36,7 @@ main {
  */
 
 h1 {
-  font-size: var(--fs-actionMessage);
+  font-size: var(--fs-28);
   margin: 0.67em 0;
 }
 

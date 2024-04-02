@@ -1,0 +1,4 @@
+body {
+  font-family: var(--font-family) !important;
+  font-size: var(--fs-16);
+}

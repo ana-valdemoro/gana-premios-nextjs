@@ -16,16 +16,18 @@
   --fs-20: calc(20 / var(--base) * 1rem);
   /* 1.4rem */
   --fs-22_4: calc(22.4 / var(--base) * 1rem);
+  /* 1.75rem */
+  --fs-28: calc(28 / var(--base) * 1rem);
   /* 2rem */
   --fs-32: calc(32 / var(--base) * 1rem);
 
   /* --------------------- */
 
-  --fs-moduleTitle: var(--fs-11_2);
+  /* --fs-moduleTitle: var(--fs-11_2);
   --fs-secondaryMessage: var(--fs-12);
-  --fs-description: var(--fs-14);
-  --fs-body: var(--fs-16);
-  --fs-confirmMessage: var(--fs-20);
+  --fs-description: var(--fs-14); */
+  /* --fs-body: var(--fs-16); */
+  /* --fs-confirmMessage: var(--fs-20);
   --fs-selection: var(--fs-22_4);
-  --fs-actionMessage: var(--fs-32);
+  --fs-actionMessage: var(--fs-32); */
 }
