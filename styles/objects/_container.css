@@ -1,0 +1,9 @@
+.o-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  min-height: 100vh;
+  background-color: var(--gray100);
+}

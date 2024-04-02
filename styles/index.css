@@ -1,5 +1,13 @@
+/* Reset or standarize base styles */
 @import url('generic/_normalize.css');
 @import url('generic/_box-sizing.css');
 
-@import url('settings/_colors.css');
+/* Defin variables */
 @import url('settings/_typography.css');
+@import url('settings/_colors.css');
+
+/* Affect HTML tags directly */
+@import url('elements/_body.css');
+
+/* Reusable classes */
+@import url('objects/_container.css');
